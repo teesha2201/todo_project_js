@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./media.css">
+    <script src="https://kit.fontawesome.com/87ebf30ca2.js"></script>
+
+</head>
+<body>
+    <!-- 
+    <button  onclick="revertbutton()" class="revertbutton hide" id="revertbackbutton">Back</button> -->
+    <div id="backgroundblur">
+        <header>
+            <h1 class="task">Task<span class="list"> List</span></h1>
+            <button onclick="additem()" class="additem"><i class="fa-solid fa-circle-plus"></i>Add Item</button>
+        </header>
+    </div>    
+        <nav>
+            <button  class="revertbutton" id="revertbackbutton">Back</button>
+            <div id="cardheading" class="cardheading"></div>
+            <button onclick="additem()" class="additem"><i class="fa-solid fa-circle-plus"></i></button>
+        </nav>
+        <div id="selectContainer"></div>
+        <p id="ptag">There is no items in Todo List till now..✈✈!!</p>  
+    <!-- </div> -->
+    <div id="container" class="cardcontainer"></div>
+  
+    <!-- page 2 : popupbox open -->
+    <div id="popupbox" class="popupbox hide ">
+      
+        <h2 class="h2">Add New List</h2> 
+        <input type="text" id="cardname" class="cardname" placeholder="Add New List">
+        <button onclick="addCard()" class="addcard">Add</button>
+        <button onclick="hideAddCard()" class="closecard">Close</button>
+
+    </div>
+    <!-- page 3 :card showing on page that is store in cardcontainer -->
+
+ 
+    <!-- page 4 : -->
+  
+    <!-- <div id="itempopupbox" class="itempopupbox">
+        <h2 class="h2item">Add New Item</h2>
+        <input type="text" id="itemnameincard" class="itemnameincard" placeholder="Add New Item">
+        <button onclick="addlist()" class="addcards">Add</button>
+        <button onclick="closeitem()" class="closecards">Close</button>
+    </div>   -->
+
+    <script src="./script.js"></script>
+</body>
+
+
+</html>
