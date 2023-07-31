@@ -176,8 +176,8 @@ p{
     background-repeat: no-repeat;
     /* background-size: 100% 70%; */
     position:relative;
-    top:8vh;
-    left:32vw; 
+    top:0.6vh;
+    left:20vw; 
 }
 .deletebutton{
     
@@ -329,8 +329,8 @@ p{
 }
 
 .revertbutton{
-    width: 12vw;
-    height: 4vh;
+    width: 19vw;
+    height: 5vh;
     position: absolute;
     top:6vh;
     left:8vw;

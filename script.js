@@ -12,19 +12,11 @@ let cardHeading =document.getElementById("cardheading")
 console.log(newCardName.parentNode);
 
 
-/* page 4 doc*/
-// let listItem = document.getElementById("itempopupbox")
-// let newItemName = document.getElementById("itemnameincard")
-// let addListItem = document.getElementById("addlist")
-// let closeItem = document.getElementById("closeitem")
 
 function additem()
 {
-   
       addItem.classList.remove("hide")
       blurBack.setAttribute("class","blur")
-   //addItem.setAttribute("class","popupbox show")
-   
 }
 
 function hideAddCard()
@@ -43,24 +35,17 @@ function addCard()
     let hrLine = document.createElement("hr")
     let cardName = document.createElement("h2")
     let divstore = document.createElement("div")
-   // let itemList = document.createElement("h4");
-   // let markdone = document.createElement("button")
     let deleteButton = document.createElement("button");
     let itemAdd = document.createElement("button");
 
-    createCard.setAttribute("id",cardId)
+    createCard.setAttribute("id",cardId);
     createCard.appendChild(cardName);
     createCard.appendChild(hrLine);
-    createCard.appendChild(divstore)
-    //createCard.appendChild(itemList);
-   // createCard.appendChild(markdone);
+    createCard.appendChild(divstore);
     createCard.appendChild(deleteButton);
     createCard.appendChild(itemAdd);
     cardContainer.appendChild(createCard);
 
-  //  divstore.appendChild(itemList);
-   // divstore.appendChild(markdone);
-   
     createCard.classList.add("card")
     pTag.style.display = "none";
 
@@ -127,6 +112,7 @@ function addCard()
       {  
           let itemNameInCard = document.createElement("p")
           let markDone = document.createElement("button")
+
          
           //let bgblur = document.createElement("div")
             itemNameInCard.appendChild(markDone)
@@ -134,16 +120,27 @@ function addCard()
           divstore.appendChild(markDone)
          // body.appendChild(bgblur)
   
+        // divstore.style.display="flex";
+        divstore.setAttribute("class","flex")
           itemNameInCard.setAttribute("class","itemNameincard")
           markDone.setAttribute("class","markdone")
         
           itemNameInCard.innerText =  newItemName.value;
           markDone.innerHTML = "markdone"
+
+          
+          deleteButton.addEventListener('click',function(){
+            markDone.classList.remove("class","linethrough")
+            markDone.classList.add("class","markdone")
+            itemNameInCard.classList.remove("class","textdecoration")
+            itemNameInCard.classList.add("class","itemNameincard")
+            cardHeading.innerText=  "";
+           
+        } ); 
+        
   
           divstore.setAttribute("class","innerdivinsidecard")
-        
-          //.setAttribute("class","removepopupbox")
-         // listItem.classList.add("hide")
+          
           listItem.style.display = "none";
           createCard.style.height="auto";
          
@@ -154,9 +151,10 @@ function addCard()
           itemNameInCard.setAttribute("class","textdecoration")
           
           })
-     
-        } ); 
         
+
+
+          }) //closing tag of addListItem
     } );
     
     /* for showing only select card in center ,today */
@@ -184,7 +182,7 @@ function addCard()
     navBar.style.display = "none";
     header.style.display ="flex";
     cardContainer.appendChild(createCard);
-
+    // cardHeading.innerText=  "";
     selectContainer.innerText =" ";
     
  }
