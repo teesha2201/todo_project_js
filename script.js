@@ -11,14 +11,16 @@ let cardHeading =document.getElementById("cardheading")
 
 console.log(newCardName.parentNode);
 
-
+/* Additem on first page :open popupbox to add card */
 
 function additem()
 {
       addItem.classList.remove("hide")
       blurBack.setAttribute("class","blur")
+      pTag.setAttribute("class","blur")
 }
 
+/* Close Button of popupbox that add card */
 function hideAddCard()
 {
     addItem.classList.add("hide")
@@ -26,7 +28,8 @@ function hideAddCard()
 }
 /* unique id to each card */
 let cardId = 0;
-// const createcard2 = document.getElementById("cardnew2") 
+/* card design and push card into card container */
+
 function addCard()
 {
     
@@ -60,17 +63,17 @@ function addCard()
     itemAdd.classList.add("itemadd");
     deleteButton.classList.add("deletebutton");
     
-   
+/* delete card from card container */
     deleteButton.addEventListener('click',function()
      {
          createCard.remove();
-        // console.log(cardId) show deleted id 
+    
      }
      );
- 
+    /* Hide popupbox  after adding single card in card container */ 
      hideAddCard()
 
-    /*addbutton of card we are creating popup2 */
+    /*addbutton of card we are creating popup2  from where we add item in list*/
     
     itemAdd.addEventListener('click',function()
     {    
@@ -89,6 +92,7 @@ function addCard()
        listItem.appendChild(closeItem)
        body.appendChild(listItem)
       
+       cardContainer.style.filter="blur(5px)"
        listItem.setAttribute("class","itempopupbox" )
         //itempopupbox.style.display = "block"
       
@@ -101,7 +105,7 @@ function addCard()
         //newItemName.style.placeholder = "add new item";
         addListItem.innerText = "Add";
         closeItem.innerText = "Close";
-
+        blurBack.setAttribute("class","blur")
         /* close button of popupbox */
         closeItem.addEventListener("click", () => {
             listItem.remove();
@@ -110,33 +114,24 @@ function addCard()
       
       addListItem.addEventListener('click',function()
       {  
-          let itemNameInCard = document.createElement("p")
+          let itemNameInCard = document.createElement("h3")
           let markDone = document.createElement("button")
 
+          cardContainer.style.filter="blur(0px)"
          
           //let bgblur = document.createElement("div")
-            itemNameInCard.appendChild(markDone)
+          itemNameInCard.appendChild(markDone)
           divstore.appendChild(itemNameInCard)
           divstore.appendChild(markDone)
          // body.appendChild(bgblur)
   
         // divstore.style.display="flex";
-        divstore.setAttribute("class","flex")
-          itemNameInCard.setAttribute("class","itemNameincard")
-          markDone.setAttribute("class","markdone")
+        blurBack.setAttribute("class","undoblur")
+        itemNameInCard.setAttribute("class","itemNameincard")
+        markDone.setAttribute("class","markdone")
         
           itemNameInCard.innerText =  newItemName.value;
-          markDone.innerHTML = "markdone"
-
-          
-          deleteButton.addEventListener('click',function(){
-            markDone.classList.remove("class","linethrough")
-            markDone.classList.add("class","markdone")
-            itemNameInCard.classList.remove("class","textdecoration")
-            itemNameInCard.classList.add("class","itemNameincard")
-            cardHeading.innerText=  "";
-           
-        } ); 
+          markDone.innerHTML = "markdone";
         
   
           divstore.setAttribute("class","innerdivinsidecard")
@@ -151,9 +146,6 @@ function addCard()
           itemNameInCard.setAttribute("class","textdecoration")
           
           })
-        
-
-
           }) //closing tag of addListItem
     } );
     
@@ -188,6 +180,13 @@ function addCard()
  }
 }
 
-
+//   deleteButton.addEventListener('click',function(){
+        //     markDone.classList.remove("class","linethrough")
+        //     markDone.classList.add("class","markdone")
+        //     itemNameInCard.classList.remove("class","textdecoration")
+        //     itemNameInCard.classList.add("class","itemNameincard")
+        //     cardHeading.innerText=  "";
+           
+        // } ); 
        
  
