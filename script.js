@@ -9,7 +9,7 @@ let navBar = document.querySelector("nav")
 let header = document.querySelector("header")
 let cardHeading =document.getElementById("cardheading")
 let headerId = document.getElementById("headerid")
-let navId = document.getElementById("navid")
+//let navId = document.getElementById("navid")
 
 console.log(newCardName.parentNode);
 
@@ -22,7 +22,7 @@ function additem()
       pTag.setAttribute("class","blur")
       cardContainer.style.filter = "blur(5px)"
       selectContainer.style.filter = "blur(5px)"
-      navId.style.filter = "blur(5px)"
+      navBar.style.filter = "blur(5px)"
 }
 
 /* Close Button of popupbox that add card */
@@ -33,7 +33,7 @@ function hideAddCard()
     pTag.setAttribute("class","undoblur")
     cardContainer.style.filter = "blur(0px)"
     selectContainer.style.filter = "blur(0px)"
-    navId.style.filter = "blur(0px)"
+    navBar.style.filter = "blur(0px)"
 }
 /* unique id to each card */
 let cardId = 0;
