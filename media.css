@@ -100,6 +100,7 @@ p{
 
 .closecard 
 {
+    
     width:17vw;
     height: 6vh;
     border-radius: 20px;
@@ -126,28 +127,32 @@ p{
 /* card creation*/
 
 .cardcontainer{
+    border:3px sold red;
     width:auto;
     /* height:70vh; */
     display: flex;
     flex-wrap: wrap;
-    gap:80px;
+    gap:10px;
     justify-content: space-evenly;
     align-items: center;
     
     position: relative;
-    top:18vh;
-    /* left:10vw; */
+    /* top:18vh; */
+    /* bottom:2vh; */
+    /* left:5vw; */
    /* border :2px solid green; */
 }
 .card{
-    width:56vw;
+    width:68vw;
     min-height: 40vh;
     background-color: rgb(217, 231, 231);
     border: 2px solid black;
     border-radius:20px;
     /* z-index: 3; */
     position:relative;
- 
+    /* bottom:0.5vh; */
+    
+    border:2px solid green;
 }
 
 .hide{
@@ -168,27 +173,27 @@ p{
 .itemadd{   /*addbutton to open popupbox for new*/
   
     text-align: center;
-    width:11vw;
-    height: 6vh;
+    width:9vw;
+    height: 5vh;
     border-radius: 23px;
     background-color: lightslategray;
     background-image: url("./circle-plus-solid.svg");
     background-repeat: no-repeat;
     /* background-size: 100% 70%; */
     position:relative;
-    top:0.6vh;
-    left:20vw; 
+    margin-bottom: 3vh;
+    left:30vw; 
 }
 .deletebutton{
     
-    width:11vw;
-    height: 6vh;
+    width:9vw;
+    height: 5vh;
     border-radius: 21px;
     background-size: 92% 65%;
     background-color: lightslategray;
     position: relative;
-    top:0.5vh;
-    left:43vw;
+    margin-bottom: 3vh;
+    left:50vw;
     background-image: url("./delete.svg");
     background-repeat: no-repeat;
 }
@@ -303,17 +308,11 @@ p{
 
 #selectContainer{
     width:auto;
-    /* height:50vh; */
     display: none;
-    /* flex-wrap: wrap; */
-    /* gap:30px; */
     margin-top:24vh;
     justify-content: center;
     align-items: center;
-    /* border:5px solid red; */
-    /* position: ;
-    top:18vh;
-    left:18vw; */
+   
 }
 
 /* single card  show on page  */
@@ -481,22 +480,19 @@ p{
         /* height:70vh; */
         display: flex;
         flex-wrap: wrap;
-        gap:80px;
+        gap:20px;
         justify-content: space-evenly;
         align-items: center;
-        
         position: relative;
         top:18vh;
-        /* left:10vw; */
-       /* border :2px solid green; */
+      
     }
     .card{
-        width:56vw;
+        width:40vw;
         min-height: 40vh;
         background-color: rgb(217, 231, 231);
         border: 2px solid black;
         border-radius:20px;
-        /* z-index: 3; */
         position:relative;
      
     }
@@ -528,8 +524,8 @@ p{
         background-repeat: no-repeat;
         /* background-size: 100% 70%; */
         position:relative;
-        top:8vh;
-        left:34vw; 
+        margin-bottom:4vh;
+        left:6vw; 
     }
     .deletebutton{
         
@@ -539,8 +535,8 @@ p{
         background-size: 95% 66%;
         background-color: lightslategray;
         position: relative;
-        top:0.5vh;
-        left:43vw;
+        margin-bottom: 4vh;
+        left:24vw;
         background-image: url("./delete.svg");
         background-repeat: no-repeat;
     }
@@ -656,17 +652,11 @@ p{
     
     #selectContainer{
         width:auto;
-        /* height:50vh; */
         display: none;
-        /* flex-wrap: wrap; */
-        /* gap:30px; */
         margin-top:24vh;
         justify-content: center;
         align-items: center;
-        /* border:5px solid red; */
-        /* position: ;
-        top:18vh;
-        left:18vw; */
+        
     }
     
     /* single card  show on page  */
