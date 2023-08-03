@@ -8,6 +8,7 @@ let revertButton = document.getElementById("revertbackbutton")
 let navBar = document.querySelector("nav")
 let header = document.querySelector("header")
 let cardHeading =document.getElementById("cardheading")
+let headerId = document.getElementById("headerid")
 
 console.log(newCardName.parentNode);
 
@@ -18,6 +19,7 @@ function additem()
       addItem.classList.remove("hide")
       blurBack.setAttribute("class","blur")
       pTag.setAttribute("class","blur")
+      cardContainer.style.filter = "blur(5px)"
 }
 
 /* Close Button of popupbox that add card */
@@ -25,6 +27,8 @@ function hideAddCard()
 {
     addItem.classList.add("hide")
     blurBack.setAttribute("class","undoblur")
+    pTag.setAttribute("class","undoblur")
+    cardContainer.style.filter = "blur(0px)"
 }
 /* unique id to each card */
 let cardId = 0;
@@ -51,6 +55,7 @@ function addCard()
 
     createCard.classList.add("card")
     pTag.style.display = "none";
+    cardContainer.style.filter = "blur(5px)"
 
     cardName.innerText = newCardName.value;
    
@@ -66,7 +71,9 @@ function addCard()
 /* delete card from card container */
     deleteButton.addEventListener('click',function()
      {
-         createCard.remove();
+         createCard.style.display="none";
+         cardHeading.innerText=  "";
+         headerId.style.filter = "blur(0px)"
     
      }
      );
@@ -94,6 +101,7 @@ function addCard()
       
        cardContainer.style.filter="blur(5px)"
        listItem.setAttribute("class","itempopupbox" )
+       selectContainer.style.filter="blur(5px)"
         //itempopupbox.style.display = "block"
       
        h2Item.setAttribute("class","h2item")
@@ -109,6 +117,9 @@ function addCard()
         /* close button of popupbox */
         closeItem.addEventListener("click", () => {
             listItem.remove();
+            cardContainer.style.filter="blur(0px)"
+
+           
       });
       /* Add button of popupboox */
       
@@ -118,6 +129,7 @@ function addCard()
           let markDone = document.createElement("button")
 
           cardContainer.style.filter="blur(0px)"
+          selectContainer.style.filter="blur(0px)"
          
           //let bgblur = document.createElement("div")
           itemNameInCard.appendChild(markDone)
@@ -174,8 +186,9 @@ function addCard()
     navBar.style.display = "none";
     header.style.display ="flex";
     cardContainer.appendChild(createCard);
-    // cardHeading.innerText=  "";
+    cardHeading.innerText=  "";
     selectContainer.innerText =" ";
+    
     
  }
 }
