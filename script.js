@@ -9,6 +9,7 @@ let navBar = document.querySelector("nav")
 let header = document.querySelector("header")
 let cardHeading =document.getElementById("cardheading")
 let headerId = document.getElementById("headerid")
+let navId = document.getElementById("navid")
 
 console.log(newCardName.parentNode);
 
@@ -20,6 +21,8 @@ function additem()
       blurBack.setAttribute("class","blur")
       pTag.setAttribute("class","blur")
       cardContainer.style.filter = "blur(5px)"
+      selectContainer.style.filter = "blur(5px)"
+      navId.style.filter = "blur(5px)"
 }
 
 /* Close Button of popupbox that add card */
@@ -29,6 +32,8 @@ function hideAddCard()
     blurBack.setAttribute("class","undoblur")
     pTag.setAttribute("class","undoblur")
     cardContainer.style.filter = "blur(0px)"
+    selectContainer.style.filter = "blur(0px)"
+    navId.style.filter = "blur(0px)"
 }
 /* unique id to each card */
 let cardId = 0;
@@ -68,13 +73,13 @@ function addCard()
     itemAdd.classList.add("itemadd");
     deleteButton.classList.add("deletebutton");
     
-/* delete card from card container */
+/* delete card from card container and same from selectcontainer if it is inside */
     deleteButton.addEventListener('click',function()
      {
          createCard.style.display="none";
          cardHeading.innerText=  "";
          headerId.style.filter = "blur(0px)"
-    
+         
      }
      );
     /* Hide popupbox  after adding single card in card container */ 
@@ -84,7 +89,7 @@ function addCard()
     
     itemAdd.addEventListener('click',function()
     {    
-        //createpopupbox(divstore);
+       
        let body = document.querySelector("body")
        let listItem = document.createElement("div")
        let h2Item = document.createElement("h2")
@@ -99,10 +104,11 @@ function addCard()
        listItem.appendChild(closeItem)
        body.appendChild(listItem)
       
-       cardContainer.style.filter="blur(5px)"
+      
        listItem.setAttribute("class","itempopupbox" )
+       cardContainer.style.filter="blur(5px)"
        selectContainer.style.filter="blur(5px)"
-        //itempopupbox.style.display = "block"
+        
       
        h2Item.setAttribute("class","h2item")
        newItemName.setAttribute("class","newitemname")
@@ -110,14 +116,19 @@ function addCard()
        closeItem.setAttribute("class","closecard")
    
         h2Item.innerText = "Add New Item";
-        //newItemName.style.placeholder = "add new item";
+        
         addListItem.innerText = "Add";
         closeItem.innerText = "Close";
+
         blurBack.setAttribute("class","blur")
+
         /* close button of popupbox */
         closeItem.addEventListener("click", () => {
             listItem.remove();
             cardContainer.style.filter="blur(0px)"
+            selectContainer.style.filter = "blur(0px)"
+            blurBack.setAttribute("class","undoblur")
+            // navId.style.filter = "blur(0px)"
 
            
       });
