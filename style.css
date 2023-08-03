@@ -3,10 +3,8 @@
     padding:0;
 }
 body{
-    /* width: 100vw; */
-    /* height: 100vh; */
-    color:white;
-    
+   
+    color:white; 
     background-color: black;
     /* overflow-x: hidden; */
     overflow-y: scroll;   
@@ -34,7 +32,7 @@ body{
         top:5vh;
         right: 5vw;
         font-size: 33px;
-        background-image:linear-gradient(270deg,gray,white);
+        background-image:linear-gradient(270deg,rgb(128, 236, 248),rgb(105, 225, 215));
         color:black; 
         font-style:oblique ;  
     }
@@ -54,7 +52,10 @@ p{
     
     width:30vw;
     height:30vh;
-    background-color:gainsboro;
+    /* background-color:gainsboro; */
+    background-image: url(./travel.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 24px;
     position:fixed;
     top:35vh;
@@ -145,7 +146,10 @@ p{
 .card{
     width:20vw;
     min-height: 40vh;
-    background-color: rgb(217, 231, 231);
+    /* background-color: rgb(217, 231, 231); */
+    background-image: url(./images.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     border: 6px solid rgb(19, 245, 230);
     border-radius:20px;
     /* z-index: 3; */
@@ -202,7 +206,8 @@ p{
     
     width:30vw;
     height:30vh;
-    background-color:gainsboro;
+    /* background-color:gainsboro; */
+    background-image: url(./image2.jpg);
     border-radius: 24px;
     position:fixed;
     top:35vh;
